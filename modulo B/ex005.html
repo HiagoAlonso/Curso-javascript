@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1 = 1545.5
+        n1 = n1.toFixed(3).replace('.', ',') //Exibir até 3 casas decimais e Trocar os PONTOS por VIRGULAS.
+        var n2 = 1545.5
+        n2 = n2.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) // Formatar para Moeda Nacional, Dolar em USD, ou EUR para Euro.
+        document.write(`Esse é o valor tratado: ${n1}, e esse em forma de Moeda: ${n2}`) //Printar no Documento.
+
+        /*
+        Operadores Aritméticos:
+            Iguais ao Python
+            x++ e x-- é a mesma coisa que x+=1 e x-+1.
+
+        Operadores Lógicos:
+            ! (Negação) "Nãol"
+            && (Conjunção) "E"
+            || (Disjunção) "Ou"
+        
+        Operadores Ternários:
+
+            media >= 7.0 ?Aprovado :Reprovado
+        */
+    </script>
+</body>
+</html>

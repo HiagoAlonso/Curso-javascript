@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com DOM</title>
+    <style>
+        body{
+            background-color: rgb(97, 39, 12);
+        }
+
+        main{
+            background-color: rgba(0, 0, 0, 0.486);
+            color: rgb(199, 199, 199);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            width: 80vw;
+            margin: auto;
+            height: 200px;
+        }
+        div#missix{
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.705);
+            color: black;
+            font-weight: bold;
+            text-shadow: 0px 0px 1px black;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.637);
+            border-radius: 20px;
+            padding: 10px;
+            margin: auto;
+        }
+        div#missix:hover{
+            color: rgb(1, 1, 51);
+            text-shadow: 0px 0px 1px blue;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Iniciando estudos com <strong>DOM</strong>.</h1>
+        <p class="par">Aqui vai o Resultado</p>
+        <p class="par">Aprendendo JavaScript com o DOM</p>
+        <div id="missix">Clique em Mim</div>
+    </main>
+
+    <script>
+    
+
+        /*
+
+        var bottom = d.getElementById("missix")
+        var par = d.getElementsByClassName("par")
+
+        var d = d.querySelector("div#missix")
+        var d = d.querySelectorAll("p.par")
+
+        */
+
+        /*
+
+        var p1 = document.getElementsByTagName("p")[0]
+        var corpo = window.document.body
+        window.document.write("Está escrito assim: " + p1.innerText) Escreve no Body o conteúdo do Paragráfo 1.
+        window.document.write("Está escrito assim: " + p1.innerHTML) Escreve no Body o conteúdo do Paragráfo 1 com as formatações.
+        p1.style.color = "blue" Muda a cor do parágrafo 1 para Azul.
+        corpo.style.background = "black" Muda a cor do body para Preto.
+
+        */
+
+
+    </script>
+</body>
+</html>
