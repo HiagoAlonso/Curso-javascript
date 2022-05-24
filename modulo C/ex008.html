@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Dom</title>
+    <style>
+        div#area{
+            background-color: rgb(0, 177, 0);
+            color: white;
+            width: 200px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja
+    </div>
+    <script>
+
+        var a = document.getElementById("area")
+        a.addEventListener("click", clicar)
+        a.addEventListener("mouseout", sair)
+        a.addEventListener("mouseenter", entrar)
+
+        function entrar(){
+            a.innerText = "Entrou"
+        }
+
+        function sair(){
+            a.innerText = "Saiu"
+        }
+
+        function clicar(){
+            a.innerText = "Clicou"
+        }
+
+        /*
+        onmouseover - Passar o mouse por cima do elemento.
+        onmouseenter - Passar o mouse por cima do elemento.
+        mousemove - Mover o mouse por cima do elemento.
+        mouseout - Mover o mouse para fora do elemento.
+        mousedown - Clicar e Pressionar o elemento.
+        mouseup - Soltar o clique no elemento.
+        click - Clicar no elemento.
+        */
+    </script>
+</body>
+</html>
