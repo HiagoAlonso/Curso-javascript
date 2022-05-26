@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Os INPUTS</title>
+</head>
+<body>
+    <header>
+        <h1>Inputs</h1>
+    </header>
+    <main>
+
+        <section id="cadastro">
+
+            <h2>Cadastro</h2>
+
+            <div id="item_email">
+                <p>Email:</p>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div id="item_senha">
+                <p>Senha:</p>
+                <input type="password" name="senha" id="senha">
+            </div>
+
+            <div id="item_nascimento">
+                <p>Data de Nascimento:</p>
+                <input type="date" name="nascimento" id="nascimento">
+            </div>
+
+            <div id="item_checkbox_email">
+                <p>Receba nossos Emails</p>
+                <input type="checkbox" name="checkbox_email" id="checkbox_email">
+            </div>
+
+            <input id="cadastrar" type="button" value="Cadastrar" onclick="cadastrar()">
+
+        </section>
+
+        <section id="pesquisa">
+
+            <h2>Pesquisa</h2>
+
+            <div>
+                <p>Qual o seu horário mais disponível?</p>
+                <input type="time" name="horario" id="horario">
+            </div>
+
+            <div>
+                <p>Como é sua atividade na comunidade?</p>
+                <input type="range" name="atividade" id="atividade">
+            </div>
+
+        </section>
+    </main>
+    <script>
+        function cadastrar(){
+            var email = document.querySelector("input#email")
+            var senha = document.querySelector("input#senha")
+            var nascimento = document.querySelector("input#nascimento")
+            var check_email = document.querySelector("input#checkbox_email")
+
+            var horario = document.querySelector("input#horario")
+            var atividade = document.querySelector("input#atividade")
+
+            var email = email.value
+            var senha = String(senha.value)
+            var nascimento = String(nascimento.value)
+            var check_email = Boolean(check_email.value)
+            var horario = String(horario.value)
+            var atividade = String(atividade.value)
+
+            window.alert("O Email Cadastrado Foi: "+ email)
+            window.alert("A Senha Cadastrado Foi: "+ senha)
+            window.alert("O Horário Cadastrado Foi: "+ horario)
+            window.alert("A Atividade Cadastrado Foi: "+ atividade)
+            window.alert("A Data Cadastrada Foi: "+ nascimento)
+            window.alert("A Check Cadastrado Foi: "+ check_email)
+        }
+        
+    </script>
+</body>
+</html>
