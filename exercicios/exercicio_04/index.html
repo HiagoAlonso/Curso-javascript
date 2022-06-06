@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vamos Contar</title>
+
+</head>
+<body>
+    <header>
+        <h1>Título</h1>
+    </header>
+    <section>
+        <div>
+            <p>Início: <input type="number" id="inicio"></p>
+            <p>Fim: <input type="number" id="fim"></p>
+            <p>Passo: <input type="number" id="passo"></p>
+            <input type="button" value="Começar" Onclick="contagem()">
+        </div>
+        <div>
+            <p id="res"></p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy Hiago C. Alonso</p>
+    </footer>
+
+    <script>
+        function contagem() {
+            const p1 = Number(document.querySelector('input#inicio').value)
+            const pfinal = Number(document.querySelector('input#fim').value)
+            const r = Number(document.querySelector('input#passo').value)
+
+            let list = " "
+
+            if (p1 >= 0 && pfinal >= 0 && r>0){
+                for (c = p1; c <= pfinal; c+=r){
+                    list = list +" 👉 "+ c
+                }
+            } else {
+                window.alert("Digite valores numéricos maiores que 0 nos campos.")
+            }
+
+            document.querySelector('p#res').innerHTML = `${list}`
+        }
+    </script>
+</body>
+</html>
