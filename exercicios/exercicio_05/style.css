@@ -22,12 +22,22 @@ footer {
     font-style: italic;
 }
 
-#button {
-    margin-left: 10px;
+select {
+    width: 200px;
 }
 
-#tabuada {
-    padding: 2px;
-    width: 150px;
-    height: 180px;
+#input-number {
+    margin-left: 5px;
+}
+
+#resFinal {
+    font-size: 1.15em;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+strong {
+    font-weight: normal;
+    border-bottom: 1px solid black;
+    
 }

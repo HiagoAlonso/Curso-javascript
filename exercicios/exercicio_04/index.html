@@ -5,22 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Vamos Contar</title>
-
+    <title>Tabuada</title>
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
-            <p>Início: <input type="number" id="inicio"></p>
-            <p>Fim: <input type="number" id="fim"></p>
-            <p>Passo: <input type="number" id="passo"></p>
-            <input type="button" value="Começar" Onclick="contagem()">
+            <p>Número: <input type="number" id="numero"><input type="button" id="button" value="Começar" Onclick="contagem()"></p>
+
         </div>
         <div>
-            <p id="res"></p>
+            <select name="tabuada" id="tabuada" size="10">
+                <option value="1"></option>             
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+            </select>
         </div>
     </section>
     <footer>
@@ -29,21 +37,14 @@
 
     <script>
         function contagem() {
-            const p1 = Number(document.querySelector('input#inicio').value)
-            const pfinal = Number(document.querySelector('input#fim').value)
-            const r = Number(document.querySelector('input#passo').value)
 
-            let list = " "
+            const num = Number(document.querySelector('input#numero').value)
+            
+            for (let c=1; c<=10 ;c++){
+                let res = num * c
+                document.getElementsByTagName("option")[c-1].innerHTML = `${num} x ${c} = ${res}`
 
-            if (p1 >= 0 && pfinal >= 0 && r>0){
-                for (c = p1; c <= pfinal; c+=r){
-                    list = list +" 👉 "+ c
-                }
-            } else {
-                window.alert("Digite valores numéricos maiores que 0 nos campos.")
             }
-
-            document.querySelector('p#res').innerHTML = `${list}`
         }
     </script>
 </body>
