@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Eventos e Estilos com Jquery</title>
+    <style>
+        #button {
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+        }
+        #texto {
+            padding: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Clica aí pô, confia.</h2>
+    <button id="button">Clique aqui</button>
+    <input type="text" placeholder="Digite algo" id="texto">
+
+    <script>
+
+        /*
+            dblclick --> clique duplo
+            mouse: enter, leave, out. Etc.
+            hover.
+        */
+        
+        $(document).ready(function () {
+
+            $("#button").dblclick(function () { // Eventos são feitos diretamente no JS.
+
+                $("p").html("Foi clicado.")
+                alert("Clica uma vez só po")
+                $(this).hide() // Para selecionar o próprio elemento;
+            })
+
+            
+            $("#button").on('click', function(){
+                alert("Clicou")
+            })
+
+
+            $('#button').hover(
+                
+                function () { // mouseenter
+                    $(this).text("Entrou") 
+                },
+
+                function () { // mouseover
+                    $(this).text("Saiu")
+                }
+            )
+
+
+            $("#texto").focus(function (){ // Blur - Evento disparado quando sai do foco. (Permanente)
+                $(this).css("background-color", "lightgray") // Adicionando estilos CSS's.
+            }) 
+
+
+            $("#button").on({
+                mouseenter: function(){
+                    //...
+                },
+                click: function(){
+                    //...
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

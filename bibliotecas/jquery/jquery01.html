@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Sintaxe e Selectores</title>
+</head>
+<body>
+    <h1 id="teste">Sintaxe e Selectores do Jquery</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, sequi est atque nam veritatis assumenda, esse dolor explicabo voluptas cum quos quae. Voluptates, cupiditate dolores nostrum aperiam ratione cum qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ullam itaque fugit cumque culpa dolore, excepturi ipsum iste ab pariatur ad perspiciatis hic officia modi sunt ex sint doloremque odit.</p>
+
+    <p id="p-test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tenetur labore magni sunt molestias dignissimos nobis, deserunt ab voluptate tempora autem repellendus quia temporibus nesciunt officia consectetur ea cumque dolorem.
+    Porro velit eos sit doloremque, saepe alias doloribus reiciendis illum incidunt, ullam unde quae earum quibusdam voluptatum architecto vero maiores, dolorum nesciunt repellendus ratione inventore. Hic cum iure repudiandae ipsam!</p>
+
+    <p class="p-class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minima voluptatem soluta, commodi dicta repellat optio assumenda similique alias ipsam placeat omnis, ullam molestiae maiores, ex repellendus nihil. Exercitationem, reprehenderit.
+    Repellat, ducimus, vitae inventore praesentium voluptates consectetur, velit ratione eos cupiditate maiores corporis id tempora! Eum totam dolores fuga expedita pariatur ducimus similique! Voluptatum unde sit dolor in eius saepe?</p>
+
+    <script>
+
+        //JavaScript Puro:
+        document.querySelector("h1#teste").innerHTML = "Substituindo o valor com JS puro"
+
+        //Com Jquery:
+        $("#teste").html("Substituindo o valor")
+
+        //Adicionando Classe com Jquery:
+        $("p").addClass('nome-da-classe')
+
+        //O que acontecer quando o Documento estiver pronto (Assim que carregou).
+        $(document).ready(function(){
+            $("p").html("Inserido com Jquery: Tag")
+            $("p#p-test").html("Inserido com Jquery: ID")
+            $("p.p-class").html("Inserido com Jquery: Class")
+        })
+    </script>
+</body>
+</html>
