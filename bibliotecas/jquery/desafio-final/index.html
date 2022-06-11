@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>QueryQuiz</title>
+</head>
+<body>
+    <main>
+        <div id="quiz">
+            <h1 id="pergunta">Aqui vai a pergunta</h1>
+            <div id="respostas">
+                <input id="resp0" class="res" type="button" value="">
+                <input id="resp1" class="res" type="button" value="">
+                <input id="resp2" class="res" type="button" value="">
+                <input id="resp3" class="res" type="button" value="">
+            </div>
+            <br>
+            <input type="button" value="Confirmar" id="confirmar"></input>
+        </div>
+        <div id="status" class="hidden">
+            <h2 id="mensagem">Game Over!</h2>
+            <input type="button" value="Jogar Novamente" id="novo_jogo">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

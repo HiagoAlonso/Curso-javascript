@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Método NoConflit</title>
+    <style>
+                * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+            width: 1000px;
+            margin: auto;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgb(107, 107, 107);
+        }
+
+        .blocos {
+            margin: 10px;
+            padding: 30px;
+            border: 1px solid rgb(157, 157, 157);
+            box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        .buttons {
+            margin: 10px;
+            padding: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Usando o Método No Conflit</h1>
+
+        <div id="local" class="blocos">
+            <p id="res"></p>
+        </div>
+
+        <div id="external" class="blocos">
+            <p>Preencha o Campo</p>
+            <input type="text" placeholder="Digite seu Nome" id="nome" class="buttons">
+            <input type="button" value="Clique Aqui" id="button" class="buttons">
+        </div>
+
+    </main>
+    <script>
+        var j = $.noConflict() //Padrão é jQuery
+        j(document).ready(function () {
+            j("#button").click(function (){
+                let nome = j("#nome").val()
+                j("p#res").html(nome)
+            })
+        })
+    </script>
+</body>
+</html>

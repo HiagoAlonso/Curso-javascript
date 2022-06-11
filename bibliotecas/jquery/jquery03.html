@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Efeitos e Animações em jQuery</title>
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            width: 1000px;
+            padding: 20px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            margin: 20px 0px 20px 30px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+        }
+
+        .block {
+            border-bottom: 1px solid white;
+            margin-bottom: 50px;
+        }
+
+        #titulo-principal {
+            background-color: rgba(0, 0, 0, 0.568);
+            text-align: center;
+            text-transform: uppercase;
+            padding: 20px;
+            line-height: 52px;
+            color: white;
+            letter-spacing: 1.3px;
+            border-radius: 10px;
+        }
+
+        .test-object {
+            text-align: center;
+            padding: 10px;
+            background-color: beige;
+            width: 150px;
+            margin: 20px;
+            border-radius: 10px;
+            border: 1px solid white;
+            margin: 20px auto;
+        }
+
+        #flip, #painel {
+            padding: 5px;
+            text-align: center;
+            background-color: brown;
+            color: white;
+            border: 1px solid black;
+        }
+        #flip {
+            cursor: pointer;
+        }
+
+        #teste_3 {
+            position: absolute;
+        }
+
+        #painel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 id="titulo-principal">Trabalhando com Efeitos e Animações.</h1>
+        <div class="container">
+
+            <div id="bloco_1" class="block">
+                <button id="buttonHide">Ocultar</button>
+                <button id="buttonShow">Mostrar</button>
+
+                <div class="test-object" style="background-color: red;">Me observe</div>
+                <div class="test-object" style="background-color: blue;">Me observe</div>
+                <div class="test-object" style="background-color: yellow;">Me observe</div>
+            </div>
+
+            <div id="bloco_2" class="block">
+                <div id="flip">Clique aqui para Aparecer o Painel</div>
+                <div id="painel">Painel Oculto</div>
+            </div>
+
+
+            <div id="bloco_3" class="block">
+                <div id="teste_3" class="test-object" style="background-color: green;">Olhe pra mimm.</div>
+                <div id="teste_4" class="test-object" style="background-color: orange;">Olhe pra mimm.</div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        $(document).ready(function () {
+
+            $("#buttonHide").click(function () { // Esconder
+                $(".test-object").hide(2000, function () {
+                    $("#button").text("Clicado.")
+                })
+            })
+
+            $("#buttonShow").click(function () { // Mostrar
+                $(".test-object").show("slow")
+            })
+
+            $("#button").click(function () {
+                $(".test-object").toggle(2000, function () { // É como um interruptor, substitui os dois acima
+                    $("#button").text("Foi Escondido/Mostrado")
+                })
+            })
+
+
+            // --------------------
+
+
+            $("#button").click(function () {
+                $(".teste-object").fadeToggle('slow') // FadeOut && FadeIn
+            })
+
+
+            $("#flip").click(function () {
+                $('#painel').slideToggle('slow') // slideDown && slideUp
+            })
+
+            // --------------------
+
+            $('#teste_3').click(function () {
+                $(this).animate({right: '250px'}) // Nem usa saporra.
+            })
+
+            $('#teste_4').click(function () { // Encadeamento.
+                $(this).css('background-color', 'red').slideUp(2000).slideDown(2000)
+            })
+
+            // --------------------
+
+        })
+
+    </script>
+</body>
+</html>

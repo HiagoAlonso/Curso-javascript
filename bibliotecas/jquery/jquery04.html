@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.js"></script>
+    <title>Manipulando o DOM</title>
+    <style>
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .container {
+            margin: 10px;
+            margin-top: 50px;
+        }
+
+        .button {
+            padding: 10px;
+        }
+
+
+        .painelButton {
+            text-align: center;
+            border-radius: 10px 10px 0px 0px;
+            padding: 10px;
+            width: 180px;
+            margin: auto;
+            border: 1px solid black;
+            background-color: brown;
+            color: white;
+        }
+
+        .painelButton:hover {
+            background-color: rgb(184, 43, 43);
+            box-shadow: rgb(184, 43, 43);
+            text-shadow: 0px 0px 4px white;
+        }
+
+        .titulos{
+            text-align: center;
+            margin: auto;
+            width: 700px;
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .center {
+            display: flex;
+            margin: auto;
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .center:hover {
+            background-color: brown;
+            color: white;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-weight: normal;
+        }
+
+        img {
+            display: flex;
+            width: 200px;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        main {
+            width: 1000px;
+            height: 900px;
+            padding: 10px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0px 0px 7px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>Aprendendo a Manipular o DOM pelo jQuery</h1>
+        <h2>Wubba Lubba Dub Dub</h2>
+        <div class="container">
+            <p id="res"></p>
+            <input type="text" id="nome" placeholder="Digite teu nome">
+            <input id="button_1" type="button" value="Confirmar">
+        </div>
+        <div class="container">
+            <img id="img" src="https://www.looper.com/img/gallery/the-real-reason-rick-from-rick-morty-is-so-intelligent/l-intro-1617852226.jpg" alt="">
+        </div>
+        <div class="container">
+            <a id="link" href="https://www.google.com.br/" target="_blank">Link para o Google</a>
+            <input id="button_2" type="button" value="Verificar">
+        </div>
+        <div class="container">
+            <div id="painel">Mostrar Painel</div>
+            <div id="flip">
+                <input id="b_h1" class="button" type="button" value="Modificar Título h1">
+                <input id="b_h2" class="button" type="button" value="Modificar Título h2">
+                <input id="b2_h2" class="button" type="button" value="Adicionar Título h2">
+                <input id="b_in" class="button" type="button" value="Atribuir valor ao Input">
+                <input id="b_hr" class="button" type="button" value="Trocar o Link">
+                <input id="b_im" class="button" type="button" value="Trocar a Imagem">
+                <input id="b_dl" class="button" type="button" value="Deletar Título h2">
+                <input id="b_es" class="button" type="button" value="Esvaziar Div">
+                <input id="b_css" class="button" type="button" value="Modificar CSS">
+            </div>
+        </div>
+    </main>
+    
+    <script>
+    $(document).ready(function () {
+
+        $('#b_h1').click(function () {
+            $("h1").text("Rick And Morty")
+            $(this).remove()
+        })
+
+        $('#b_h2').click(function () {
+            $("h2").text("Wubba Lubba Dub Du Haka")
+        })
+
+        $('#b2_h2').click(function () {
+            $("h2").append(' Cristais da Morte Galáxianos') // preppend para adicionar "Antes"
+        })
+
+        $('#b_in').click(function () {
+            $("#nome").val(`Mr. Meesseks`)
+        })
+
+        $('#b_hr').click(function () {
+            $("#link").attr('href', `https://www.canva.com/`).text("Link para Canvas")
+            $(this).remove()
+        })
+
+        $('#b_im').click(function () {
+            $("#img").attr('src', "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzcJ-nV2YZJYEnShDrTjwLO4_ROJbaNd9qEJxHHJw%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1")
+            $(this).remove()
+        })
+
+        $("#b_dl").click(function () {
+            $('#h2').remove()
+            $('#b_h2').remove()
+            $('#b2_h2').remove()
+            $('#b_es').remove()
+            $(this).remove()
+        })
+
+        $('#b_es').click(function () {
+            $('h2').empty()
+        })
+
+
+
+        $('#b_css').click(function () { //removeClass; da pra usar o toggleClass.
+            $('h1').addClass('titulos')
+            $('h2').addClass('titulos')
+            $('input').addClass('center')
+            $('#button_2').remove()
+            $('#link').remove()
+            $('#b_css').remove()
+            $('body').css('background-color', 'rgb(10, 10, 30)')
+            $('#painel').addClass('painelButton')
+
+            
+            $("#painel").click(function () {
+                $('#flip').slideToggle('slow') // slideDown && slideUp
+            })
+        })
+
+
+
+        $('button_2').click(function () {
+            const link = $('#link').attr('href')
+            $("#res").text(`O link vai para: ${link}`)
+        })
+    })
+
+    /*
+    var cor = $('body').css('background') 
+    var dimensoes = $(img).width().height()  //Dá para alterar também. Seria interessante usar com animação.
+    Pega o valor.
+    */
+    </script>
+</body>
+</html>

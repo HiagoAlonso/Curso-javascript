@@ -1,0 +1,4 @@
+<div id="bloco-TXT">
+    <h2>Requisição Ajax via Diretório</h2>
+    <p>Fazendo minha primeira requisição Ajax.</p>
+</div>
