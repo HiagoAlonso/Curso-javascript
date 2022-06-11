@@ -5,30 +5,42 @@ var perguntas_feitas = []
 //PERGUNTAS DO JOGO
 
 const perguntas = [
-
-    //PERGUNTA 0
     {
         pergunta: "Qual destas linguagens não é considerada uma Linguagem de Programação:",
         respostas: ["PHP", "JavaScript", "C++", "CSS"],
         correta: "resp3"
-    },
-    //PERGUNTA 1
-    {
-        pergunta: "Em que ano o Brasil foi descoberto:",
+    },{
+        pergunta: "Em que ano o Brasil foi descoberto?",
         respostas: ["1498", "1500", "1375", "1828"],
         correta: "resp1"
-    },
-    //PERGUNTA 2
-    {
-        pergunta: "O que significa a sigla HTML:",
+    },{
+        pergunta: "O que significa a sigla HTML?",
         respostas: ["Hyper Tonto Maluco Legal", "Hyper Text Markup Language", "Hy Trade More Ladding", "Hyper Text Markation Language"],
         correta: "resp1"
-    },
-    //PERGUNTA 3
-    {
+    },{
         pergunta: "Qual destas linguagens é considerada uma Linguagem de Marcação:",
         respostas: ["HTML", "Assembly", "Java", "Kotlin"],
         correta: "resp0"
+    },{
+        pergunta: "Qual destas linguagens é mais apta á Machine Learning e Data Science?",
+        respostas: ["Python", "Fortrant", "Java", "Kotlin"],
+        correta: "resp0"
+    },{
+        pergunta: "Qual destas linguagens foi utilizada na criação do Windows da Microsoft?",
+        respostas: ["Assembly", "C++", "C#", "C"],
+        correta: "resp1"
+    },{
+        pergunta: "Qual destas ferramentas é utilizada para fazer requisições de Arquivos e API's externas?",
+        respostas: ["jQuery", "React", "Node.js", "Ajax"],
+        correta: "resp3"
+    },{
+        pergunta: "Qual destes Frameworks é mantido pelo Facebook(Meta) e lidera na popularidade?",
+        respostas: ["Vue", "React", "Angular", "Electron"],
+        correta: "resp1"
+    },{
+        pergunta: "Quais destes é um Design Pattern?",
+        respostas: ["Function", "IA Pattern", "Web Design", "Observer"],
+        correta: "resp3"
     },
 ]
 
